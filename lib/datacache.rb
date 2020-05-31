@@ -19,4 +19,9 @@ class DataCache
     @store_times[key] = Time.now.to_i
     return @cache.fetch(key)
   end
+
+  def invalidate(key)
+    @cache.delete(key)
+    @store_times.delete(key)
+  end
 end
