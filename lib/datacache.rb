@@ -9,7 +9,7 @@ class DataCache
   end
 
   def fetch(key, &block)
-    raise ArgumentError, "Block must be given to DataCache.fetch" unless block
+    raise ArgumentError, 'Block must be given to DataCache.fetch' unless block
 
     if @cache.key?(key) && Time.now.to_i - @store_times.fetch(key) < @timeout
       return @cache.fetch(key)
