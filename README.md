@@ -1,13 +1,17 @@
-# Calculated
+# Datacache
 
 A wrapper for caching data until a timeout.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Add these lines to your application's Gemfile:
 
 ```ruby
-gem 'calculated', github: 'jubishop/datacache'
+gem 'concurrent-ruby', require: 'concurrent'
+
+gem 'core', github: 'jubishop/core'
+gem 'duration', github: 'jubishop/duration'
+gem 'datacache', github: 'jubishop/datacache'
 ```
 
 And then execute:

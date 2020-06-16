@@ -1,10 +1,13 @@
+require 'concurrent'
+
 require 'core'
+require 'duration'
 
 class DataCache
   def initialize(timeout = 60.seconds)
     @timeout = timeout
-    @cache = {}
-    @store_times = {}
+    @cache = Concurrent::Hash.new
+    @store_times = Concurrent::Hash.new
   end
 
   def fetch(key, &block)
