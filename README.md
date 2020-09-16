@@ -24,16 +24,16 @@ $ bundle install
 
 ```ruby
 cache = DataCache.new(10.seconds)
-now = cache.fetch('now') { Time.now }
-# Future calls to cache.fetch('now') will return the same thing for 10 seconds
+now = cache.fetch('time') { Time.now }
+# Future calls to cache.fetch('time') will return the same thing for 10 seconds
 
-cache.fresh?('now') # true
+cache.fresh?('time') # true
+sleep 10
+cache.fresh?('time') # false
 
-cache.set('now') { 123 }
-# Future calls to cache.fetch('now') will return 123 for 10 seconds.
+now = cache.set('time') { 123 }
+# Future calls to cache.fetch('time') will return 123 for 10 seconds.
 
-cache.invalidate('now')
-# All references to 'now' are expunged.
-
-cache.fresh?('now') # false 
+cache.invalidate('time')
+# All references to 'time' are expunged.
 ```
