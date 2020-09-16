@@ -26,4 +26,7 @@ $ bundle install
 cache = DataCache.new(10.seconds)
 now = cache.fetch('now') { Time.now }
 # Future calls to cache.fetch('now') will return the same thing for 10 seconds
+
+cache.set('now') { 123 }
+# Future calls to cache.fetch('now') will return 123 for 10 seconds.
 ```
