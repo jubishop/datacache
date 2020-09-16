@@ -29,4 +29,7 @@ now = cache.fetch('now') { Time.now }
 
 cache.set('now') { 123 }
 # Future calls to cache.fetch('now') will return 123 for 10 seconds.
+
+cache.invalidate('now')
+# All references to 'now' are expunged.
 ```
