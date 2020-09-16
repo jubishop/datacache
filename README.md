@@ -27,9 +27,13 @@ cache = DataCache.new(10.seconds)
 now = cache.fetch('now') { Time.now }
 # Future calls to cache.fetch('now') will return the same thing for 10 seconds
 
+cache.fresh?('now') # true
+
 cache.set('now') { 123 }
 # Future calls to cache.fetch('now') will return 123 for 10 seconds.
 
 cache.invalidate('now')
 # All references to 'now' are expunged.
+
+cache.fresh?('now') # false 
 ```
