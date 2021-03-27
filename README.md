@@ -1,5 +1,7 @@
 # Datacache
 
+[![Rubocop Status](https://github.com/jubishop/datacache/workflows/Rubocop/badge.svg)](https://github.com/jubishop/datacache/actions)
+
 A wrapper for caching data until a timeout.
 
 ## Installation
