@@ -22,18 +22,19 @@ gem 'datacache', source: 'https://www.jubigems.org/'
 
 ```ruby
 cache = DataCache.new(10.seconds)
-now = cache.fetch('time') { Time.now }
-# Future calls to cache.fetch('time') will return the same thing for 10 seconds
+now = cache.fetch('time') { Time.now } # Future calls to cache.fetch('time') will return the same thing for 10 seconds
 
 cache.fresh?('time') # true
 sleep 10
 cache.fresh?('time') # false
 
-now = cache.set('time', 123)
-# Future calls to cache.fetch('time') will return 123 for 10 seconds.
+now = cache.set('time', 123) # Future calls to cache.fetch('time') will return 123 for 10 seconds.
 
-cache.invalidate('time')
-# All references to 'time' are expunged.
+cache.exists?('time') # true
+
+cache.invalidate('time') # All references to 'time' are expunged.
+
+cache.exists?('time') # false
 ```
 
 ## License
