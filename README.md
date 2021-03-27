@@ -1,6 +1,6 @@
 # Datacache
 
-[![Rubocop Status](https://github.com/jubishop/datacache/workflows/Rubocop/badge.svg)](https://github.com/jubishop/datacache/actions)
+[![RSpec Status](https://github.com/jubishop/datacache/workflows/RSpec/badge.svg)](https://github.com/jubishop/datacache/actions)  [![Rubocop Status](https://github.com/jubishop/datacache/workflows/Rubocop/badge.svg)](https://github.com/jubishop/datacache/actions)
 
 A wrapper for caching data until a timeout.
 
@@ -29,7 +29,7 @@ cache.fresh?('time') # true
 sleep 10
 cache.fresh?('time') # false
 
-now = cache.set('time') { 123 }
+now = cache.set('time', 123)
 # Future calls to cache.fetch('time') will return 123 for 10 seconds.
 
 cache.invalidate('time')
