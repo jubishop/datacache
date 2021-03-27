@@ -4,20 +4,16 @@ A wrapper for caching data until a timeout.
 
 ## Installation
 
-Add these lines to your application's Gemfile:
+### Global installation
 
-```ruby
-gem 'concurrent-ruby', require: 'concurrent'
-
-gem 'core', github: 'jubishop/core'
-gem 'duration', github: 'jubishop/duration'
-gem 'datacache', github: 'jubishop/datacache'
+```zsh
+gem install datacache --source https://www.jubigems.org/
 ```
 
-And then execute:
+### In a Gemfile
 
-```sh
-$ bundle install
+```ruby
+gem 'datacache', source: 'https://www.jubigems.org/'
 ```
 
 ## Usage
@@ -37,3 +33,7 @@ now = cache.set('time') { 123 }
 cache.invalidate('time')
 # All references to 'time' are expunged.
 ```
+
+## License
+
+The gem is available as open source under the terms of the [MIT License](https://opensource.org/licenses/MIT).
