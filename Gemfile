@@ -13,7 +13,6 @@ gem 'rubocop-rspec'
 gem 'steep'
 
 source 'https://www.jubigems.org' do
-  gem 'core'
   gem 'duration'
   gem 'rakegem'
 end

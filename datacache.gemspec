@@ -16,6 +16,5 @@ Gem::Specification.new do |spec|
   }
   spec.required_ruby_version = Gem::Requirement.new('>= 3.0')
   spec.add_runtime_dependency('concurrent-ruby')
-  spec.add_runtime_dependency('core')
   spec.add_runtime_dependency('duration')
 end

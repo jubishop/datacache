@@ -1,6 +1,5 @@
 require 'concurrent'
 
-require 'core'
 require 'duration'
 
 class DataCache
@@ -17,7 +16,7 @@ class DataCache
   end
 
   def set(key, &block)
-    raise ArgumentError, 'Block must be given to DataCache.fetch' unless block
+    raise ArgumentError, 'Block must be given to DataCache.set' unless block
 
     @cache[key] = block.run
     @store_times[key] = Time.now
