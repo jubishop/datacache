@@ -18,5 +18,5 @@ source 'https://www.jubigems.org' do
   gem 'rakegem'
 end
 
-# Specify your gem's dependencies in ginit.gemspec
+# Specify your gem's dependencies in datacache.gemspec
 gemspec
