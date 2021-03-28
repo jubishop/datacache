@@ -1,6 +1,6 @@
 # Datacache
 
-[![RSpec Status](https://github.com/jubishop/datacache/workflows/RSpec/badge.svg)](https://github.com/jubishop/datacache/actions)  [![Rubocop Status](https://github.com/jubishop/datacache/workflows/Rubocop/badge.svg)](https://github.com/jubishop/datacache/actions)
+[![RSpec Status](https://github.com/jubishop/datacache/workflows/RSpec/badge.svg)](https://github.com/jubishop/datacache/actions/workflows/rspec.yml)  [![Rubocop Status](https://github.com/jubishop/datacache/workflows/Rubocop/badge.svg)](https://github.com/jubishop/datacache/actions/workflows/rubocop.yml)
 
 A wrapper for caching data until a timeout.
 
