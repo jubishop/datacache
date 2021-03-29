@@ -3,7 +3,7 @@ target :lib do
 
   check 'lib'
 
-  library 'concurrent'
   library 'core'
+  library 'date'
   library 'duration'
 end
