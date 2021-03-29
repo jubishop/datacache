@@ -1,0 +1,17 @@
+class DataCache
+  attr_reader timeout: Duration
+
+  def initialize: (?Duration timeout) -> untyped
+
+  def fetch: (Object key, Object value) -> Object
+           | (Object key) { () -> Object } -> Object
+
+  def set: (Object key, Object value) -> Object
+         | (Object key) { () -> Object } -> Object
+
+  def exists?: (Object key) -> bool
+
+  def fresh?: (Object key) -> bool
+
+  def invalidate: (Object key) -> TrueClass
+end
