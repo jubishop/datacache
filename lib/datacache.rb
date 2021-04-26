@@ -18,12 +18,18 @@ class DataCache
   end
 
   def set(key, value = nil, &block)
+    puts "when setting #{key}: #{block.class}"
     if value.nil? == block.nil?
       raise ArgumentError, 'block OR value must be given to DataCache.set'
     end
 
-    @cache[key] = value.nil? ? block.run : value
-    @store_times[key] = Time.now
+    begin
+      @cache[key] = value.nil? ? block.run : value
+      @store_times[key] = Time.now
+    rescue StandardError
+      invalidate(key)
+      return false
+    end
 
     return @cache.fetch(key)
   end

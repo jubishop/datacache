@@ -31,6 +31,13 @@ RSpec.describe(DataCache) {
     expect(@datacache.exists?('key')).to(be(false))
   }
 
+  it('catches errors and returns false') {
+    @datacache.set('error_key') { raise StandardError, 'Well fuck' }
+    expect(@datacache.fetch('error_key') {
+             raise StandardError, 'Well fuck'
+           }).to(be_falsey)
+  }
+
   context('#set') {
     it('takes a block') {
       @datacache.set('key') { return 'value' }
