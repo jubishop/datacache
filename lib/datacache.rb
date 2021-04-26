@@ -18,7 +18,6 @@ class DataCache
   end
 
   def set(key, value = nil, &block)
-    puts "when setting #{key}: #{block.class}"
     if value.nil? == block.nil?
       raise ArgumentError, 'block OR value must be given to DataCache.set'
     end
