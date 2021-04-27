@@ -33,6 +33,7 @@ RSpec.describe(DataCache) {
 
   it('catches errors and returns false') {
     @datacache.set('error_key') { raise StandardError, 'Well fuck' }
+    expect { @datacache.fetch('error_key') }.to(raise_error(ArgumentError))
     expect(@datacache.fetch('error_key') {
              raise StandardError, 'Well fuck'
            }).to(be_falsey)
